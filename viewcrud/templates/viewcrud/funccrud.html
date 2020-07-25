@@ -1,0 +1,25 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <title>맛집 추천</title>
+</head>
+<body>
+    
+    <a href="{% url 'newblog'%}">글쓰기</a>
+
+    {% for food in foods %}
+      <h2>{{food.title}}</h2>
+      <h4>{{food.pub_date}}</h4>
+      <p>{{food.body}}</p>
+      <a href= "{% url 'update' food.id %}">수정</a>
+      <a href = "{% url 'delete' food.id %}">삭제</a>
+
+      <hr>
+    {% endfor %}
+</body>
+</html>
